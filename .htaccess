@@ -1,0 +1,180 @@
+# The following lines prevent .htaccess files from being viewed by Web clients.
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Définir le codage de caractères
+AddDefaultCharset UTF-8
+
+# Security Headers
+<IfModule  mod_headers.c>
+Header set Cache-Control "no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires 0
+Header always set X-Frame-Options "sameorigin"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+Header set Content-Security-Policy "default-src * data: ; script-src * 'unsafe-inline' 'unsafe-eval' ; style-src * 'unsafe-inline' data: ; base-uri 'self';"
+</IfModule>
+
+# Page d'erreur 404 (ajouter dans le .htm, / au chemin href du 404-error.css et des images)
+ErrorDocument 404 /404-error.htm
+
+# Page d'erreur 410 (ajouter dans le .htm, / au chemin href du 404-error.css et des images)
+ErrorDocument 410 /410-gone.htm
+
+Redirect 410 /fische-statuen-skulpturen
+Redirect 410 /notas-legales
+Redirect 410 /sonderwunsche-de/xxl-vase.webp
+Redirect 410 /contact
+Redirect 410 /jets.de.htm
+Redirect 410 /deco.htm
+Redirect 410 /estatuas-esculturas-jarrones
+Redirect 410 /fuentes-chorros-de-agua-para-piscinas
+Redirect 410 /vases.de.htm
+Redirect 410 /vases-de-jardin-en-pierre
+Redirect 410 /contactar
+Redirect 410 /esculturas-de-marmol-y-estatuas
+Redirect 410 /jarrones-de-piedra-para-jardin
+Redirect 410 /fontane-getti-d-acqua-per-piscine
+Redirect 410 /getti-d-acqua
+Redirect 410 /jets.it.htm
+Redirect 410 /sculptures-de-poissons
+Redirect 410 /steingartenvasen
+Redirect 410 /jets.htm
+Redirect 410 /fontaines-jets-d-eau-pour-piscines
+Redirect 410 /pool-brunnen
+Redirect 410 /wasserstrahlen
+Redirect 410 /contact.htm
+Redirect 410 /pesci-statue-sculture
+Redirect 410 /poissons-statues-sculptures
+Redirect 410 /special.de.htm
+Redirect 410 /esculturas-de-peces
+Redirect 410 /special.es.htm
+Redirect 410 /index.it.htm
+Redirect 410 /special.it.htm
+Redirect 410 /sculture-di-pesce
+Redirect 410 /deco.it.htm
+Redirect 410 /vases.es.htm
+Redirect 410 /vases.htm
+Redirect 410 /peces-estatuas-esculturas
+Redirect 410 /deco.es.htm
+Redirect 410 /index.es.htm
+Redirect 410 /contatto
+Redirect 410 /statue-sculture-vasi
+Redirect 410 /jets-d-eau
+Redirect 410 /deco.de.htm
+Redirect 410 /steinvasen-garten
+Redirect 410 /sonderwunsche
+Redirect 410 /peticiones-especiales
+Redirect 410 /richieste-speciali
+Redirect 410 /sculptures-et-statues-en-pierre.htm
+Redirect 410 /statuen-skulpturen-vasen
+Redirect 410 /sonderwunsche-de/riesenvase.webp
+Redirect 410 /kontakt
+Redirect 410 /statues-sculptures-vases
+Redirect 410 /rechtliche-hinweise
+
+# Suivre les liens symboliques
+Options +FollowSymlinks
+
+# URL rewriting et redirections 301 (Permanent)
+RewriteEngine on
+
+########## hub ##########
+
+RewriteRule ^index.htm$ / [R=410,L]
+RewriteRule ^$ /index.htm [END]
+
+########## fr ##########
+
+RewriteRule ^fr/index.htm$ /fr/ [R=410,L]
+RewriteRule ^fr/$ /fr/index.htm [END]
+
+RewriteRule ^fr/fontaines-jets-d-eau-pour-piscines.htm$ /fr/fontaines-jets-d-eau-pour-piscines [R=410,L]
+RewriteRule ^fr/fontaines-jets-d-eau-pour-piscines$ /fr/fontaines-jets-d-eau-pour-piscines.htm [END]
+
+RewriteRule ^fr/vases-de-jardin-en-pierre.htm$ /fr/vases-de-jardin-en-pierre [R=410,L]
+RewriteRule ^fr/vases-de-jardin-en-pierre$ /fr/vases-de-jardin-en-pierre.htm [END]
+
+RewriteRule ^fr/poissons-statues-sculptures.htm$ /fr/poissons-statues-sculptures [R=410,L]
+RewriteRule ^fr/poissons-statues-sculptures$ /fr/poissons-statues-sculptures.htm [END]
+
+RewriteRule ^fr/demandes-speciales.htm$ /fr/demandes-speciales [R=410,L]
+RewriteRule ^fr/demandes-speciales$ /fr/demandes-speciales.htm [END]
+
+RewriteRule ^fr/contact.htm$ /fr/contact [R=410,L]
+RewriteRule ^fr/contact$ /fr/contact.htm [END]
+
+RewriteRule ^fr/mentions-legales.htm$ /fr/mentions-legales [R=410,L]
+RewriteRule ^fr/mentions-legales$ /fr/mentions-legales.htm [END]
+
+########## de ##########
+
+RewriteRule ^de/index.htm$ /de/ [R=410,L]
+RewriteRule ^de/$ /de/index.htm [END]
+
+RewriteRule ^de/pool-brunnen.htm$ /de/pool-brunnen [R=410,L]
+RewriteRule ^de/pool-brunnen$ /de/pool-brunnen.htm [END]
+
+RewriteRule ^de/steinvasen-garten.htm$ /de/steinvasen-garten [R=410,L]
+RewriteRule ^de/steinvasen-garten$ /de/steinvasen-garten.htm [END]
+
+RewriteRule ^de/fische-statuen-skulpturen.htm$ /de/fische-statuen-skulpturen [R=410,L]
+RewriteRule ^de/fische-statuen-skulpturen$ /de/fische-statuen-skulpturen.htm [END]
+
+RewriteRule ^de/sonderwunsche.htm$ /de/sonderwunsche [R=410,L]
+RewriteRule ^de/sonderwunsche$ /de/sonderwunsche.htm [END]
+
+RewriteRule ^de/kontakt.htm$ /de/kontakt [R=410,L]
+RewriteRule ^de/kontakt$ /de/kontakt.htm [END]
+
+RewriteRule ^de/rechtliche-hinweise.htm$ /de/rechtliche-hinweise [R=410,L]
+RewriteRule ^de/rechtliche-hinweise$ /de/rechtliche-hinweise.htm [END]
+
+########## es ##########
+
+RewriteRule ^es/index.htm$ /es/ [R=410,L]
+RewriteRule ^es/$ /es/index.htm [END]
+
+RewriteRule ^es/fuentes-chorros-de-agua-para-piscinas.htm$ /es/fuentes-chorros-de-agua-para-piscinas [R=410,L]
+RewriteRule ^es/fuentes-chorros-de-agua-para-piscinas$ /es/fuentes-chorros-de-agua-para-piscinas.htm [END]
+
+RewriteRule ^es/jarrones-de-piedra-para-jardin.htm$ /es/jarrones-de-piedra-para-jardin [R=410,L]
+RewriteRule ^es/jarrones-de-piedra-para-jardin$ /es/jarrones-de-piedra-para-jardin.htm [END]
+
+RewriteRule ^es/peces-estatuas-esculturas.htm$ /es/peces-estatuas-esculturas [R=410,L]
+RewriteRule ^es/peces-estatuas-esculturas$ /es/peces-estatuas-esculturas.htm [END]
+
+RewriteRule ^es/peticiones-especiales.htm$ /es/peticiones-especiales [R=410,L]
+RewriteRule ^es/peticiones-especiales$ /es/peticiones-especiales.htm [END]
+
+RewriteRule ^es/contactar.htm$ /es/contactar [R=410,L]
+RewriteRule ^es/contactar$ /es/contactar.htm [END]
+
+RewriteRule ^es/notas-legales.htm$ /es/notas-legales [R=410,L]
+RewriteRule ^es/notas-legales$ /es/notas-legales.htm [END]
+
+########## it ##########
+
+RewriteRule ^it/index.htm$ /it/ [R=410,L]
+RewriteRule ^it/$ /it/index.htm [END]
+
+RewriteRule ^it/fontane-getti-d-acqua-per-piscine.htm$ /it/fontane-getti-d-acqua-per-piscine [R=410,L]
+RewriteRule ^it/fontane-getti-d-acqua-per-piscine$ /it/fontane-getti-d-acqua-per-piscine.htm [END]
+
+RewriteRule ^it/vasi-da-giardino-in-pietra.htm$ /it/vasi-da-giardino-in-pietra [R=410,L]
+RewriteRule ^it/vasi-da-giardino-in-pietra$ /it/vasi-da-giardino-in-pietra.htm [END]
+
+RewriteRule ^it/pesci-statue-sculture.htm$ /it/pesci-statue-sculture [R=410,L]
+RewriteRule ^it/pesci-statue-sculture$ /it/pesci-statue-sculture.htm [END]
+
+RewriteRule ^it/richieste-speciali.htm$ /it/richieste-speciali [R=410,L]
+RewriteRule ^it/richieste-speciali$ /it/richieste-speciali.htm [END]
+
+RewriteRule ^it/contatto.htm$ /it/contatto [R=410,L]
+RewriteRule ^it/contatto$ /it/contatto.htm [END]
+
+RewriteRule ^it/note-legali.htm$ /it/note-legali [R=410,L]
+RewriteRule ^it/note-legali$ /it/note-legali.htm [END]

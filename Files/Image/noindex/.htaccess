@@ -1,0 +1,8 @@
+# The following lines prevent .htaccess files from being viewed by Web clients.
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Empêcher l'indexation du contenu du répertoire
+Header set X-Robots-Tag "noindex"
